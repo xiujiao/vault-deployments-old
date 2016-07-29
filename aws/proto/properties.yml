@@ -1,0 +1,12 @@
+---
+meta:
+  aws:
+    region: us-west-2
+    azs:
+      z1: (( concat meta.aws.region "a" ))
+      z2: (( concat meta.aws.region "b" ))
+      z3: (( concat meta.aws.region "c" ))
+properties:
+  vault:
+    ha:
+      domain: 10.4.1.16

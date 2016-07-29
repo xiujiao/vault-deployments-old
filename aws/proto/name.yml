@@ -1,0 +1,4 @@
+---
+name: aws-proto-vault
+meta:
+  vault_prefix: secret/aws/proto/vault

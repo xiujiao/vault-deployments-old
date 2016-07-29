@@ -1,0 +1,16 @@
+---
+meta:
+  vault_servers: (( param "Please override with the IPs of all the Vault servers" ))
+
+  jobs:
+    vault:
+      persistent_disk: 4096
+      templates:
+        - { release: vault,  name: vault  }
+        - { release: consul, name: consul }
+      properties:
+        consul:
+          join_hosts: (( grab meta.vault_servers ))
+        vault:
+          backend:
+            use_consul: true
